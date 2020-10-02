@@ -1,0 +1,45 @@
+간단하게 생각해보자
+vector<string> 안에는 단어들과 tag가 차례대로 들어가야된다.
+단어들과 tag들 사이는 ' ' 혹은 '<>'로 구분된다.
+vector안에 단어들만 순서 바꾸면 된다.
+
+1. tag와 문장을 나눠서 vector에 넣는다
+2. 문장만 골라서 단어들을 reverse한다.
+
+*keypoint
+1. getline(istream& is, string& str, char delim)
+stream에서 delimiter(default \n)가 나오기 전까지 characters를 str에 넣는다
+str에 있던 contents는 discard되고 extracted line으로 대체된다.
+
+std::cin과 비교하자면, cin은 ' '이 나오면 extract가 끝나지만 getline은 '\n' 줄바꿈이 나와야 끝난다.
+
+2. string::find('<')
+
+string (1)	
+size_t find (const string& str, size_t pos = 0) const noexcept;
+c-string (2)	
+size_t find (const char* s, size_t pos = 0) const;
+buffer (3)	
+size_t find (const char* s, size_t pos, size_type n) const;
+character (4)	
+size_t find (char c, size_t pos = 0) const noexcept;
+
+string에서 특정 character, string 를 찾는함수
+찾지못하면 std::string::npos를 return한다. 이는 size_t의 maximum value다. 원하는 값을 find하지 못했을 경우 npos를 자주 사용한다.
+size_t가 unsigned integer type이기 때문에 충분히 값이 커 -1의 value를 나타낼 수 있다고 한다.
+size_t 검색해보니 코딩 일관성을 해친다고한다(?) 이거 대신 int, unsigned int, auto, auto가 안되면 static_cast<int>, (int)를 사용한다 한다
+다음에 더 알아보길
+
+3. string::erase()
+
+sequence (1)	
+ string& erase (size_t pos = 0, size_t len = npos);
+character (2)	
+iterator erase (const_iterator p);
+range (3)	
+iterator erase (const_iterator first, const_iterator last);
+
+ㅇㅇ 지우는 역할
+
+이문제에서 find를 실행해 띄어쓰기를 찾을려면
+erase가 꼭 필요함 find는 맨 앞의 character를 찾기 때문.
