@@ -1,7 +1,7 @@
-#include <string>
 #include <iostream>
 #include <cstdio>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
@@ -11,28 +11,22 @@ int main(){
 	int n;
 	scanf("%d", &n);
 	stack<int> s; // stack의 원소는 index
-	int ans[n]; // 답 list
-	int l[n]; // input
+	vector<int> l;
+	vector<int> ans(n, -1);
+	int v;
 	for(int i=0; i<n; i++){
-		cin >> l[i];
+		cin >> v;
+		l.push_back(v);		
 	}
 	for(int i = 0; i< n; i++){
-		if(s.empty()){
-			s.push(i);
-			continue;
-		}
 		while(!s.empty()&&l[s.top()] < l[i]){
 			ans[s.top()] = l[i];
 			s.pop();
 		}
 		s.push(i);
 	}
-	while(!s.empty()){
-		ans[s.top()] = -1;
-		s.pop();
-	}
-	for(int i = 0;i<n;i++){
-		cout << ans[i] << ' ';
+	for(int i=0; i<n; i++){
+		cout << ans[i] << " ";
 	}
 	
 	return 0;	
