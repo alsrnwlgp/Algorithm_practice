@@ -34,8 +34,9 @@ public:
 	}
 	int size(){
 		if(start<=end)
-			return
-		return end - start;
+			return end - start;
+		else
+			return end + max_size - start;
 	}
 	bool empty(){
 		return size() == 0;

@@ -26,8 +26,8 @@ public:
 		values[start] = x;
 	}
 	void push_back(int x){
-		values[end++] = x;
-		end %= max_size;
+		values[end] = x;
+		end = (end+1)%max_size;
 	}
 	int pop_front(){
 		if(empty())
@@ -39,9 +39,8 @@ public:
 	int pop_back(){
 		if(empty())
 			return -1;
-		int res = values[end-1];
 		end = (end-1+max_size)%max_size;
-		return res;
+		return values[end];
 	}
 	int size(){
 		if(start<=end)
@@ -62,7 +61,7 @@ public:
 		if(empty())
 			return -1;
 		else
-			return values[end-1];
+			return values[(end-1+max_size)%max_size];
 	}
 };
 
