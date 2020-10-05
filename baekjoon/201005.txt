@@ -1,0 +1,7 @@
+1935.cpp
+
+float 써서 틀림 double 쓰자
+소수점 몇자리 까지 출력하는 방법
+cout << fixed;
+// 그냥 precision쓰면 정수부분까지 포함 fixed 쓰면 소수 부분 아래를 2로 맞춘다는 의미
+cout.precision(2);

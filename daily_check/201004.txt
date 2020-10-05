@@ -1,0 +1,9 @@
+baekjoon 17299
+test case 입력받은 변수 n으로 while(n--) 를 돌리면 n=0이 된다.
+다시 n을 사용할 수 없으므로 새로 변수를 만들어서 while안에 넣던지 for문을 사용해야된다.
+와.... 왜 for문이 돌아가지 않는지 찾는데 20분이 걸렸다.
+지금은 디버깅할때 for문이나 while문에 cout << 변수 를 사용한다. 더 간편하게 디버깅하는 방법은 없을까.
+
+baekjoon 15552
+sync_with_stdio와 cin.tie(nullptr) 를 사용할때는 scanf, printf를 사용하면 안된다. cin만 사용
+어제는 이 문제때문에 거의 한시간동안 삽질을 했다... 모르겠으면 질문 빨리 올리는게 좋을듯..
