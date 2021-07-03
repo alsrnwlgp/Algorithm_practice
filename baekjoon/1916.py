@@ -18,11 +18,11 @@ def dijkstra(start):
     dp[start] = 0
     while h:
         e, v = heappop(h)
-        for nv, ne in dp[v]:
+        for nv, ne in gph[v]:
             sume = e + ne
             if sume < dp[nv]:
                 dp[nv] = sume
-                heappush((sume, nv))
+                heappush(h, (sume, nv))
 
 
 v1, v2 = map(int, read().split())
