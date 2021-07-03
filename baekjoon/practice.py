@@ -1,2 +1,3 @@
-a = [1, 2, 3]
-print(a[1:-1])
+d = dict()
+d[1] = 2
+print(d)
