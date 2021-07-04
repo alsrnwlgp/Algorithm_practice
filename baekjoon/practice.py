@@ -1,3 +1,3 @@
-d = dict()
-d[1] = 2
-print(d)
+a = []
+a.extend([1,2])
+print(a)
